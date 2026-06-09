@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Games — Gazelle Code</title>
+  <meta name="description"
+    content="Explore Gazelle Code collections by screen, atmosphere, and material — curated for slow, beautiful living." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="shortcut icon" href="assets/shelf.png">
+
+  <script src="js/aos.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <header id="site-navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-500 py-5">
+    <div class="container-luxe flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <span
+          class="w-9 h-9 rounded-full bg-gradient-primary flex items-center justify-center text-white font-display text-lg">L</span>
+        <span class="font-display text-2xl tracking-tight">Gazelle Code</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="index.html" data-nav="index.html"
+          class="text-sm text-gray-700 hover:text-[color:var(--primary)] transition-colors">Home</a>
+        <a href="shop.html" data-nav="shop.html"
+          class="text-sm text-gray-700 hover:text-[color:var(--primary)] transition-colors">Apps</a>
+        <a href="collections.html" data-nav="collections.html"
+          class="text-sm font-medium text-[color:var(--primary)] transition-colors">Games</a>
+        <a href="gallery.html" data-nav="gallery.html"
+          class="text-sm text-gray-700 hover:text-[color:var(--primary)] transition-colors">Portfolio</a>
+        <a href="blog.html" data-nav="blog.html"
+          class="text-sm text-gray-700 hover:text-[color:var(--primary)] transition-colors">Insights</a>
+        <a href="about.html" data-nav="about.html"
+          class="text-sm text-gray-700 hover:text-[color:var(--primary)] transition-colors">About</a>
+        <a href="contact.html" data-nav="contact.html"
+          class="text-sm text-gray-700 hover:text-[color:var(--primary)] transition-colors">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="shop.html" class="hidden md:inline-flex btn-primary" style="padding:.625rem 1.25rem">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i> Apps Now
+        </a>
+        <button id="menu-btn" class="lg:hidden w-10 h-10 rounded-full bproject bproject-c flex items-center justify-center"
+          aria-label="Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden glass-navbar mt-3 mx-4 rounded-2xl p-6">
+      <nav class="flex flex-col gap-4">
+        <a href="index.html" data-nav="index.html"
+          class="text-base text-gray-700 hover:text-[color:var(--primary)]">Home</a>
+        <a href="shop.html" data-nav="shop.html"
+          class="text-base text-gray-700 hover:text-[color:var(--primary)]">Apps</a>
+        <a href="collections.html" data-nav="collections.html"
+          class="text-base font-medium text-[color:var(--primary)]">Games</a>
+        <a href="gallery.html" data-nav="gallery.html"
+          class="text-base text-gray-700 hover:text-[color:var(--primary)]">Portfolio</a>
+        <a href="blog.html" data-nav="blog.html"
+          class="text-base text-gray-700 hover:text-[color:var(--primary)]">Insights</a>
+        <a href="about.html" data-nav="about.html"
+          class="text-base text-gray-700 hover:text-[color:var(--primary)]">About</a>
+        <a href="contact.html" data-nav="contact.html"
+          class="text-base text-gray-700 hover:text-[color:var(--primary)]">Contact</a>
+        <a href="shop.html" class="btn-primary mt-2 justify-center"><i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          Apps Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24">
+
+    <!-- ========== HERO ========== -->
+    <section class="relative overflow-hidden bg-gradient-warm">
+      <div class="absolute inset-0 opacity-10">
+        <img src="assets/hero-living-screen.jpg" alt="texture" class="w-full h-full object-cover" />
+      </div>
+      <div class="relative container-luxe py-20 md:py-28 text-center">
+        <p class="eyebrow mb-4" data-aos="fade-up">Games</p>
+        <h1 class="text-display text-5xl md:text-7xl text-gray-900" data-aos="fade-up" data-aos-delay="100">Designed by
+          project type. Built for users.</h1>
+        <p class="mt-6 max-w-2xl mx-auto text-muted-c text-lg" data-aos="fade-up" data-aos-delay="200">Step through the
+          spaces of the mobile experience, one atmosphere at a time — from the quiet sanctuary of the bedscreen to the artful layers of
+          the living screen.</p>
+      </div>
+    </section>
+
+    <!-- ========== COLLECTION INTRO ========== -->
+    <section class="section-padding bg-accent-c">
+      <div class="container-luxe max-w-3xl text-center" data-aos="fade-up">
+        <p class="eyebrow mb-3">Our approach</p>
+        <h2 class="text-display text-4xl md:text-5xl">Every project direction has a purpose</h2>
+        <p class="mt-6 text-muted-c leading-relaxed">We don't just sell digital projects — we curate atmospheres. Each screen
+          collection is assembled with a distinct palette of systems, textures, and developer pieces that work together
+          to create a feeling as much as a look.</p>
+      </div>
+    </section>
+
+    <!-- ========== MAIN COLLECTIONS (alternating layouts) ========== -->
+    <section class="section-padding">
+      <div class="container-luxe space-y-24">
+
+        <!-- Mobile Apps -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+          <div class="overflow-hidden rounded-2xl shadow-luxe">
+            <img src="assets/collection-living.jpg" alt="Mobile Apps"
+              class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div>
+            <p class="eyebrow mb-3">Collection 01</p>
+            <h2 class="text-display text-4xl md:text-5xl">Mobile Apps</h2>
+            <p class="mt-5 text-muted-c leading-relaxed">Sofas, armchairs, side tables and the soft layered textures
+              that turn a living screen into a refuge. We favor natural linens, warm woods, and hand‑woven rugs that age
+              gracefully.</p>
+            <a href="shop.html" class="btn-outline mt-8">Apps Mobile Apps <i data-lucide="arrow-right"
+                class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Mobile Games (image on right) -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center lg:[&>*:first-child]:project-2" data-aos="fade-up">
+          <div class="overflow-hidden rounded-2xl shadow-luxe">
+            <img src="assets/collection-bedscreen.jpg" alt="Mobile Games"
+              class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div>
+            <p class="eyebrow mb-3">Collection 02</p>
+            <h2 class="text-display text-4xl md:text-5xl">Mobile Games</h2>
+            <p class="mt-5 text-muted-c leading-relaxed">Linen bedding, low‑profile beds, and quiet lighting designed
+              for genuine rest. Soft palettes, blackout curtains, and tactile throws create a sleep‑first sanctuary.</p>
+            <a href="shop.html" class="btn-outline mt-8">Apps Mobile Games <i data-lucide="arrow-right"
+                class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- UI/UX Design -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+          <div class="overflow-hidden rounded-2xl shadow-luxe">
+            <img src="assets/collection-lighting.jpg" alt="UI/UX Design"
+              class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div>
+            <p class="eyebrow mb-3">Collection 03</p>
+            <h2 class="text-display text-4xl md:text-5xl">UI/UX Design</h2>
+            <p class="mt-5 text-muted-c leading-relaxed">Sculptural lamps and pleated pendants that paint the screen as
+              much as illuminate it. From ambient floor lanterns to task‑focused brass reading lights.</p>
+            <a href="shop.html" class="btn-outline mt-8">Apps UI/UX Design <i data-lucide="arrow-right"
+                class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Interactive Tools (image on right) -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center lg:[&>*:first-child]:project-2" data-aos="fade-up">
+          <div class="overflow-hidden rounded-2xl shadow-luxe">
+            <img src="assets/collection-wallart.jpg" alt="Interactive Tools"
+              class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div>
+            <p class="eyebrow mb-3">Collection 04</p>
+            <h2 class="text-display text-4xl md:text-5xl">Interactive Tools</h2>
+            <p class="mt-5 text-muted-c leading-relaxed">Limited prints, framed botanicals, and original works from a
+              small circle of artists. Each piece is chosen for its ability to anchor a screen without overwhelming it.
+            </p>
+            <a href="shop.html" class="btn-outline mt-8">Apps Interactive Tools <i data-lucide="arrow-right"
+                class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Game Systems (new) -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+          <div class="overflow-hidden rounded-2xl shadow-luxe">
+            <img src="assets/project-vase.jpg" alt="Game Systems"
+              class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div>
+            <p class="eyebrow mb-3">Collection 05</p>
+            <h2 class="text-display text-4xl md:text-5xl">Game Systems</h2>
+            <p class="mt-5 text-muted-c leading-relaxed">Solid wood tables, hand‑thrown dinnerware, and candle holders
+              that make every meal a ceremony. Designed for gatherings slow and meaningful.</p>
+            <a href="shop.html" class="btn-outline mt-8">Apps Game Systems <i data-lucide="arrow-right"
+                class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Brand Experiments (new, image on right) -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center lg:[&>*:first-child]:project-2" data-aos="fade-up">
+          <div class="overflow-hidden rounded-2xl shadow-luxe">
+            <img src="assets/project-sofa.jpg" alt="Brand Experiments"
+              class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div>
+            <p class="eyebrow mb-3">Collection 06</p>
+            <h2 class="text-display text-4xl md:text-5xl">Brand Experiments</h2>
+            <p class="mt-5 text-muted-c leading-relaxed">Vases, bowls, trays, and the small objects that finish a screen.
+              Each accent is crafted by hand — a quiet detail that invites touch.</p>
+            <a href="shop.html" class="btn-outline mt-8">Apps Brand Experiments <i data-lucide="arrow-right"
+                class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== FEATURED CATEGORIES ========== -->
+    <section class="section-padding bg-accent-c">
+      <div class="container-luxe">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <p class="eyebrow mb-3">The details</p>
+          <h2 class="text-display text-4xl md:text-5xl">Explore by material & craft</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="shop.html"
+            class="card-luxury flex flex-col items-center justify-center p-6 text-center group hover:bproject-primary-c transition-colors">
+            <span
+              class="w-12 h-12 rounded-full bg-gradient-primary/10 flex items-center justify-center mb-3 group-hover:bg-gradient-primary/20 transition">
+              <i data-lucide="flame" class="w-6 h-6 text-primary-c"></i>
+            </span>
+            <span class="font-display text-sm">Ceramics</span>
+          </a>
+          <a href="shop.html"
+            class="card-luxury flex flex-col items-center justify-center p-6 text-center group hover:bproject-primary-c transition-colors">
+            <span
+              class="w-12 h-12 rounded-full bg-gradient-primary/10 flex items-center justify-center mb-3 group-hover:bg-gradient-primary/20 transition">
+              <i data-lucide="tree-pine" class="w-6 h-6 text-primary-c"></i>
+            </span>
+            <span class="font-display text-sm">Wood</span>
+          </a>
+          <a href="shop.html"
+            class="card-luxury flex flex-col items-center justify-center p-6 text-center group hover:bproject-primary-c transition-colors">
+            <span
+              class="w-12 h-12 rounded-full bg-gradient-primary/10 flex items-center justify-center mb-3 group-hover:bg-gradient-primary/20 transition">
+              <i data-lucide="feather" class="w-6 h-6 text-primary-c"></i>
+            </span>
+            <span class="font-display text-sm">Linen</span>
+          </a>
+          <a href="shop.html"
+            class="card-luxury flex flex-col items-center justify-center p-6 text-center group hover:bproject-primary-c transition-colors">
+            <span
+              class="w-12 h-12 rounded-full bg-gradient-primary/10 flex items-center justify-center mb-3 group-hover:bg-gradient-primary/20 transition">
+              <i data-lucide="gem" class="w-6 h-6 text-primary-c"></i>
+            </span>
+            <span class="font-display text-sm">Stone</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIAL ========== -->
+    <section class="bg-gradient-primary text-white">
+      <div class="container-luxe py-16 text-center" data-aos="fade-up">
+        <div class="max-w-2xl mx-auto">
+          <i data-lucide="quote" class="w-8 h-8 mx-auto mb-5 opacity-60"></i>
+          <blockquote class="font-display text-2xl md:text-3xl leading-relaxed">"The collections make it so easy to
+            imagine a whole screen coming together. I started with the living screen and haven't stopped."</blockquote>
+          <p class="mt-6 text-sm uppercase tracking-widest opacity-80">— James L., San Francisco, CA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DESIGN CONCIERGE CTA ========== -->
+    <section class="section-padding">
+      <div class="container-luxe max-w-3xl text-center" data-aos="fade-up">
+        <span class="w-14 h-14 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-5">
+          <i data-lucide="message-circle-heart" class="w-7 h-7 text-white"></i>
+        </span>
+        <h2 class="font-display text-4xl md:text-5xl mb-5">Can't decide where to start?</h2>
+        <p class="text-muted-c text-lg leading-relaxed mb-8 max-w-xl mx-auto">Our design concierge will pair your style
+          and space with the perfect collection — at no cost.</p>
+        <a href="contact.html" class="btn-primary inline-flex items-center gap-2 text-base">
+          <i data-lucide="send" class="w-4 h-4"></i> Start your consultation
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="relative mt-24 text-[#FAF7F2] overflow-hidden"
+    style="background:linear-gradient(180deg,#2a241e 0%, #1c1814 100%)">
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-20 blur-3xl"
+      style="background:var(--gradient-primary)"></div>
+
+    <div class="relative bproject-b bproject-white/10">
+      <div class="container-luxe py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="flex items-center gap-3"><span
+            class="w-11 h-11 rounded-full bg-white/5 bproject bproject-white/10 flex items-center justify-center shrink-0"
+            style="color:var(--secondary)"><i data-lucide="truck" class="w-5 h-5"></i></span>
+          <div>
+            <p class="text-sm font-medium">Free Worldwide Shipping</p>
+            <p class="text-xs text-white/60">On projects over $250</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3"><span
+            class="w-11 h-11 rounded-full bg-white/5 bproject bproject-white/10 flex items-center justify-center shrink-0"
+            style="color:var(--secondary)"><i data-lucide="shield-check" class="w-5 h-5"></i></span>
+          <div>
+            <p class="text-sm font-medium">Lifetime Warranty</p>
+            <p class="text-xs text-white/60">Crafted to last decades</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3"><span
+            class="w-11 h-11 rounded-full bg-white/5 bproject bproject-white/10 flex items-center justify-center shrink-0"
+            style="color:var(--secondary)"><i data-lucide="award" class="w-5 h-5"></i></span>
+          <div>
+            <p class="text-sm font-medium">Award-Winning Design</p>
+            <p class="text-xs text-white/60">Featured in Vogue & AD</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3"><span
+            class="w-11 h-11 rounded-full bg-white/5 bproject bproject-white/10 flex items-center justify-center shrink-0"
+            style="color:var(--secondary)"><i data-lucide="heart" class="w-5 h-5"></i></span>
+          <div>
+            <p class="text-sm font-medium">30-Day Returns</p>
+            <p class="text-xs text-white/60">Love it, or send it back</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bproject-b bproject-white/10">
+      <div class="container-luxe py-12 grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="eyebrow" style="color:var(--secondary)">Join the Nest</p>
+          <h3 class="font-display text-3xl md:text-4xl mt-3 leading-tight">Get updates from Gazelle Code — and a occasional notes on apps and games.</h3>
+        </div>
+        <form class="flex items-center gap-2 bg-white/10 backdrop-blur rounded-full p-2 bproject bproject-white/10"
+          onsubmit="event.preventDefault()">
+          <i data-lucide="mail" class="w-4 h-4 ml-3 text-white/60 shrink-0"></i>
+          <input type="email" placeholder="Enter your email address"
+            class="bg-transparent flex-1 px-2 py-3 text-sm placeholder:text-white/50 focus:outline-none min-w-0 text-white" />
+          <button
+            class="bg-gradient-primary text-white rounded-full px-5 py-3 text-xs font-medium uppercase tracking-widest inline-flex items-center gap-2 hover:opacity-90 transition">Subscribe
+            <i data-lucide="send" class="w-3 h-3"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="relative container-luxe py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-2 mb-5">
+          <span
+            class="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center font-display text-lg">L</span>
+          <span class="font-display text-2xl">Gazelle Code</span>
+        </div>
+        <p class="text-white/70 text-sm leading-relaxed max-w-sm">Luxury mobile experience digital design and interface inspiration crafted for
+          modern living. Every piece is hand-selected from developers who share our love for honest systems and timeless
+          design.</p>
+        <div class="mt-6 space-y-3 text-sm text-white/75">
+          <div class="flex items-start gap-3"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"
+              style="color:var(--secondary)"></i><span>240 Maple Avenue, Kuwait · Remote worldwide 11201</span></div>
+          <div class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4"
+              style="color:var(--secondary)"></i><span>+1 (212) 555-0142</span></div>
+          <div class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4"
+              style="color:var(--secondary)"></i><span>hello@gazellecode.com</span></div>
+          <div class="flex items-center gap-3"><i data-lucide="clock" class="w-4 h-4"
+              style="color:var(--secondary)"></i><span>Mon – Sat · 10am – 7pm</span></div>
+        </div>
+        <div class="flex gap-2.5 mt-7">
+          <a href="#" aria-label="Instagram"
+            class="w-10 h-10 rounded-full bproject bproject-white/20 flex items-center justify-center hover:bg-[color:var(--primary)] hover:bproject-[color:var(--primary)] hover:scale-110 transition-all duration-300">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="Facebook"
+            class="w-10 h-10 rounded-full bproject bproject-white/20 flex items-center justify-center hover:bg-[color:var(--primary)] hover:bproject-[color:var(--primary)] hover:scale-110 transition-all duration-300">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="Twitter"
+            class="w-10 h-10 rounded-full bproject bproject-white/20 flex items-center justify-center hover:bg-[color:var(--primary)] hover:bproject-[color:var(--primary)] hover:scale-110 transition-all duration-300">
+            <i class="fa-brands fa-youtube text-sm"></i>
+          </a>
+          <a href="#" aria-label="YouTube"
+            class="w-10 h-10 rounded-full bproject bproject-white/20 flex items-center justify-center hover:bg-[color:var(--primary)] hover:bproject-[color:var(--primary)] hover:scale-110 transition-all duration-300">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <h4 class="font-display text-lg mb-5">Apps</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="shop.html" class="hover:text-[color:var(--primary)] transition-colors">All Projects</a></li>
+          <li><a href="collections.html" class="hover:text-[color:var(--primary)] transition-colors">New Arrivals</a>
+          </li>
+          <li><a href="collections.html" class="hover:text-[color:var(--primary)] transition-colors">Best Sellers</a>
+          </li>
+          <li><a href="collections.html" class="hover:text-[color:var(--primary)] transition-colors">On Sale</a></li>
+          <li><a href="shop.html" class="hover:text-[color:var(--primary)] transition-colors">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2">
+        <h4 class="font-display text-lg mb-5">Games</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="collections.html" class="hover:text-[color:var(--primary)] transition-colors">Mobile Apps</a>
+          </li>
+          <li><a href="collections.html" class="hover:text-[color:var(--primary)] transition-colors">Mobile Games</a></li>
+          <li><a href="collections.html" class="hover:text-[color:var(--primary)] transition-colors">UI/UX Design</a></li>
+          <li><a href="collections.html" class="hover:text-[color:var(--primary)] transition-colors">Interactive Tools</a></li>
+          <li><a href="gallery.html" class="hover:text-[color:var(--primary)] transition-colors">Inspiration</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2">
+        <h4 class="font-display text-lg mb-5">Support</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="contact.html" class="hover:text-[color:var(--primary)] transition-colors">Contact Us</a></li>
+          <li><a href="shipping-returns.html" class="hover:text-[color:var(--primary)] transition-colors">Shipping &
+              Returns</a></li>
+          <li><a href="project-tracking.html" class="hover:text-[color:var(--primary)] transition-colors">Project
+              Tracking</a></li>
+          <li><a href="care-guide.html" class="hover:text-[color:var(--primary)] transition-colors">Care Guide</a></li>
+          <li><a href="faqs.html" class="hover:text-[color:var(--primary)] transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2">
+        <h4 class="font-display text-lg mb-5">Company</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="about.html" class="hover:text-[color:var(--primary)] transition-colors">Our Story</a></li>
+          <li><a href="blog.html" class="hover:text-[color:var(--primary)] transition-colors">Insights</a></li>
+          <li><a href="careers.html" class="hover:text-[color:var(--primary)] transition-colors">Careers & Collaboration</a></li>
+          <li><a href="press.html" class="hover:text-[color:var(--primary)] transition-colors">Press</a></li>
+          <li><a href="trade.html" class="hover:text-[color:var(--primary)] transition-colors">Trade Program</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="relative bproject-t bproject-white/10">
+      <div class="container-luxe py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3 text-xs text-white/60">
+          <span class="uppercase tracking-widest">We accept</span>
+          <div class="flex gap-2"><span
+              class="px-2.5 py-1.5 rounded-md bg-white/10 bproject bproject-white/10 text-[10px] font-semibold tracking-wider">VISA</span><span
+              class="px-2.5 py-1.5 rounded-md bg-white/10 bproject bproject-white/10 text-[10px] font-semibold tracking-wider">MC</span><span
+              class="px-2.5 py-1.5 rounded-md bg-white/10 bproject bproject-white/10 text-[10px] font-semibold tracking-wider">AMEX</span><span
+              class="px-2.5 py-1.5 rounded-md bg-white/10 bproject bproject-white/10 text-[10px] font-semibold tracking-wider">PAYPAL</span><span
+              class="px-2.5 py-1.5 rounded-md bg-white/10 bproject bproject-white/10 text-[10px] font-semibold tracking-wider">APPLE</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-white/60">
+          <span class="uppercase tracking-widest">Get the app</span>
+          <a href="#"
+            class="px-3 py-1.5 rounded-md bg-white/10 bproject bproject-white/10 text-[10px] font-semibold tracking-wider hover:bg-[color:var(--primary)] transition">App
+            Store</a>
+          <a href="#"
+            class="px-3 py-1.5 rounded-md bg-white/10 bproject bproject-white/10 text-[10px] font-semibold tracking-wider hover:bg-[color:var(--primary)] transition">Google
+            Play</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bproject-t bproject-white/10">
+      <div
+        class="container-luxe py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/55">
+        <p>© 2026 Gazelle Code. All rights reserved. Crafted with care for modern living.</p>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a href="privacy-policy.html" class="hover:text-[color:var(--primary)]">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-[color:var(--primary)]">Terms of Service</a>
+          <a href="faqs.html" class="hover:text-[color:var(--primary)]">FAQs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scroll-top"
+    class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-primary text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity"
+    aria-label="Top">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+</body>
+
+</html>

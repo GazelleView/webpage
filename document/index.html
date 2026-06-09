@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeNest — Documentation</title>
+
+    <!-- LuxeNest Documentation Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #B4835B;
+            --primary-light: #F5EDE3;
+            --secondary: #C9A27C;
+            --bg: #FAF7F2;
+            --surface: #FFFFFF;
+            --text: #2E241E;
+            --text-muted: #6B5E53;
+            --border: #E5DDD2;
+            --accent: #F2EAE0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            padding: 36px 24px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 32px;
+            text-decoration: none;
+        }
+
+        .sidebar .brand .icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .sidebar .brand .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            letter-spacing: -0.3px;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .sidebar a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: 0.2s ease;
+        }
+
+        .sidebar a:hover {
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .content {
+            flex: 1;
+            max-width: 960px;
+            padding: 56px 64px;
+            background: var(--surface);
+            box-shadow: -1px 0 10px rgba(0,0,0,0.02);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 44px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-top: 36px;
+            margin-bottom: 12px;
+            color: #4A3A2E;
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .code {
+            background: #1E1814;
+            color: #EDDCCC;
+            padding: 20px 24px;
+            border-radius: 14px;
+            overflow-x: auto;
+            font-family: 'SF Mono', 'Cascadia Code', 'Courier New', monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            margin: 18px 0;
+            border: 1px solid #3A3028;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            line-height: 1.6;
+        }
+
+        .note {
+            background: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 18px 22px;
+            border-radius: 12px;
+            margin-top: 18px;
+            font-weight: 500;
+            color: #3E2E22;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 8px;
+            border: 1px solid var(--border);
+            font-family: 'Inter', sans-serif;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 40px 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .feature-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            margin: 0 0 8px;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        @media(max-width:768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 24px;
+            }
+            .content {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="brand">
+            <span class="icon">L</span>
+            <span class="name">LuxeNest Docs</span>
+        </div>
+        <a href="#intro">Introduction</a>
+        <a href="#installation">Installation</a>
+        <a href="#structure">Folder Structure</a>
+        <a href="#tech">Tech Stack</a>
+        <a href="#pages">Pages & Templates</a>
+        <a href="#features">Key Features</a>
+        <a href="#customize">Customization</a>
+        <a href="#images">Images & Assets</a>
+        <a href="#forms">Forms & Interactions</a>
+        <a href="#faq">FAQ & Legal Pages</a>
+        <a href="#credits">Credits</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Intro -->
+        <section id="intro" class="section">
+            <h1>LuxeNest<br>Luxury Home Decor & Interior Template</h1>
+            <p>
+                Thank you for choosing <strong>LuxeNest</strong> — a sophisticated, multi‑page HTML template designed for high‑end home decor brands, furniture boutiques, artisan studios, and interior designers.
+            </p>
+            <p>
+                LuxeNest wraps your collection in warmth, texture, and quiet luxury. It comes with 15+ production‑ready pages: an enriched home page, a filterable shop, immersive galleries with a lightbox, a blog, detailed legal/support sections, and a design‑concierge contact flow. Every element is crafted to feel like a slow exhale.
+            </p>
+            <p><strong>Version:</strong> 1.0 | <strong>Last Updated:</strong> May 2026</p>
+        </section>
+
+        <!-- Installation -->
+        <section id="installation" class="section">
+            <h2>🚀 Installation</h2>
+            <p>
+                LuxeNest uses plain HTML, Tailwind CSS via CDN, and vanilla JavaScript. No build tools, npm, or package managers are required.
+            </p>
+            <div class="code">1. Download and unzip the purchased package.
+2. Open the project folder.
+3. Double‑click <strong>index.html</strong> to preview in your browser.
+4. For editing, we recommend <strong>VS Code</strong> with the Live Server extension.</div>
+            <div class="note">
+                <strong>Quick Start:</strong> Just open <code>index.html</code> and start editing. All dependencies load from CDNs — no command line needed.
+            </div>
+        </section>
+
+        <!-- Structure -->
+        <section id="structure" class="section">
+            <h2>📁 Folder Structure</h2>
+            <pre class="code">/luxenest-theme
+├── index.html                  (Home Page)
+├── shop.html                   (Shop with filters)
+├── collections.html            (Room Collections)
+├── gallery.html                (Masonry Gallery + Lightbox)
+├── blog.html                   (Blog Listing)
+├── blog-detail.html            (Single Article)
+├── about.html                  (About & Artisans)
+├── contact.html                (Contact & Design Concierge)
+├── privacy-policy.html         (Privacy Policy)
+├── terms.html                  (Terms & Conditions)
+├── faqs.html                   (FAQ Accordion)
+├── shipping-returns.html       (Shipping & Returns)
+├── order-tracking.html         (Order Tracking)
+├── care-guide.html             (Material Care Guide)
+│
+├── css/
+│   └── styles.css              (Custom variables, typography, components)
+├── js/
+│   └── main.js                 (Navbar, scroll-to-top, AOS init)
+│
+└── assets/
+    ├── hero-living-room.jpg
+    ├── product-sofa.jpg
+    ├── product-lamp.jpg
+    ├── product-vase.jpg
+    ├── product-art.jpg
+    ├── about-designer.jpg
+    ├── collection-living.jpg
+    ├── collection-bedroom.jpg
+    ├── collection-lighting.jpg
+    └── collection-wallart.jpg</pre>
+            <p class="note">All images are placeholders — easily replace them with your own product and lifestyle photos.</p>
+        </section>
+
+        <!-- Tech -->
+        <section id="tech" class="section">
+            <h2>⚙️ Tech Stack</h2>
+            <ul>
+                <li><strong>HTML5</strong> – semantic, accessible markup</li>
+                <li><strong>Tailwind CSS (CDN)</strong> – utility‑first framework, fully customizable</li>
+                <li><strong>CSS Custom Properties</strong> – global color, font, and shadow theming</li>
+                <li><strong>Vanilla JavaScript</strong> – lightbox, accordion, filters, scroll effects</li>
+                <li><strong>Lucide Icons</strong> – consistent, lightweight SVG icons</li>
+                <li><strong>Font Awesome 6</strong> – social & brand icons</li>
+                <li><strong>AOS (Animate on Scroll)</strong> – scroll‑triggered reveal animations</li>
+                <li><strong>Google Fonts</strong> – elegant serif display + clean sans body</li>
+            </ul>
+            <div class="code">&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/aos@2.3.4/dist/aos.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/lucide@latest"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="css/styles.css"&gt;</div>
+            <div class="note">
+                All custom styles live in <code>css/styles.css</code>. Interactions (lightbox, navbar, FAQ toggle) are in <code>js/main.js</code> and inline scripts.
+            </div>
+        </section>
+
+        <!-- Pages -->
+        <section id="pages" class="section">
+            <h2>📄 Pages & Templates</h2>
+
+            <h3>Home <span class="tag">index.html</span></h3>
+            <ul>
+                <li>Hero with large serif headline, overlay gradient, and CTA buttons</li>
+                <li>Featured products grid (4 products with hover zoom)</li>
+                <li>Shop by Room interactive cards (Living, Bedroom, Dining, etc.)</li>
+                <li>Our Philosophy section with image</li>
+                <li>Journal teaser (3 recent articles)</li>
+                <li>Testimonials (3 customer quotes)</li>
+                <li>Stats counter (12k+ homes, 48 countries, 180+ artisans, 15yr lifespan)</li>
+                <li>Press & Recognition logo bar (VOGUE, AD, ELLE DECOR)</li>
+                <li>Design Concierge call‑to‑action</li>
+            </ul>
+
+            <h3>Shop <span class="tag">shop.html</span></h3>
+            <ul>
+                <li>Category filter pills (All, Living, Lighting, Accents, Wall Art)</li>
+                <li>8‑product grid with category badges and quick‑add buttons</li>
+                <li>"Load More Products" button</li>
+                <li>Shop by Room grid (same as home but in a shop context)</li>
+                <li>Best Sellers row with ranking numbers</li>
+                <li>Why Shop With Us cards (Free Shipping, Lifetime Warranty, 30‑Day Returns)</li>
+                <li>Design Concierge CTA</li>
+            </ul>
+
+            <h3>Collections <span class="tag">collections.html</span></h3>
+            <ul>
+                <li>Alternating image‑text layouts (Living Room, Bedroom, Lighting, Wall Art, Dining, Accents)</li>
+                <li>Explore by Material cards (Ceramics, Wood, Linen, Stone)</li>
+                <li>Testimonial banner</li>
+                <li>Design Concierge CTA</li>
+            </ul>
+
+            <h3>Gallery <span class="tag">gallery.html</span></h3>
+            <ul>
+                <li>Masonry image grid (20 images, responsive columns)</li>
+                <li>Category filter chips (All Rooms, Living, Bedroom, etc.)</li>
+                <li>Click‑to‑open full‑screen lightbox with swipe, keyboard arrows, and counter</li>
+                <li>"Shop the Pieces You're Drawn To" product grid</li>
+                <li>Testimonial & Design Concierge CTA</li>
+            </ul>
+
+            <h3>Blog <span class="tag">blog.html</span></h3>
+            <ul>
+                <li>Large featured post (image + excerpt)</li>
+                <li>6‑article grid with category labels, read times, and hover effects</li>
+                <li>"Load More Articles" placeholder</li>
+                <li>Newsletter subscription CTA</li>
+            </ul>
+
+            <h3>Blog Detail <span class="tag">blog-detail.html</span></h3>
+            <ul>
+                <li>Hero image, full article with large serif headings</li>
+                <li>Pull quote block, in‑article product images</li>
+                <li>Author & share section</li>
+                <li>Related articles grid (3 posts)</li>
+            </ul>
+
+            <h3>About <span class="tag">about.html</span></h3>
+            <ul>
+                <li>Founding story with key stats (2016, 180+ artisans, 32 countries)</li>
+                <li>Four core principles (Material Honesty, Craft Over Scale, etc.)</li>
+                <li>Artisan partner cards (Portugal, Japan, Belgium)</li>
+                <li>Company timeline (2016‑2026 with gradient circles)</li>
+                <li>Team member cards (4 members with placeholder bios)</li>
+                <li>Testimonial from Architectural Digest</li>
+                <li>Dual CTA: Get in Touch + Shop the Collection</li>
+            </ul>
+
+            <h3>Contact <span class="tag">contact.html</span></h3>
+            <ul>
+                <li>Inquiry type cards (Orders, Design Concierge, Trade & Press, Careers)</li>
+                <li>Contact form with name, email, topic dropdown, and message</li>
+                <li>Studio info cards (address, phone, email, hours)</li>
+                <li>Embedded OpenStreetMap</li>
+                <li>Social channel hub (Instagram, Facebook, Twitter, YouTube)</li>
+                <li>Quick Answers FAQ links (6 common questions)</li>
+                <li>Design Concierge banner</li>
+            </ul>
+
+            <h3>Privacy Policy <span class="tag">privacy-policy.html</span></h3>
+            <ul>
+                <li>Card‑based sections with gradient icons (Information We Collect, Cookies, Your Rights, etc.)</li>
+                <li>Highlighted contact card for privacy team</li>
+            </ul>
+
+            <h3>Terms & Conditions <span class="tag">terms.html</span></h3>
+            <ul>
+                <li>13 sections covering Acceptance, Orders, Intellectual Property, Liability, etc.</li>
+                <li>Same card layout with professional legal structure</li>
+            </ul>
+
+            <h3>FAQs <span class="tag">faqs.html</span></h3>
+            <ul>
+                <li>12 accordion questions (shipping, returns, warranty, payments, etc.)</li>
+                <li>Smooth open/close animations with rotating plus/minus icons</li>
+                <li>"Still have questions?" contact card</li>
+            </ul>
+
+            <h3>Shipping & Returns <span class="tag">shipping-returns.html</span></h3>
+            <ul>
+                <li>Shipping methods with timeline cards (Standard, Express, White Glove)</li>
+                <li>Return eligibility checklist</li>
+                <li>Step‑by‑step return instructions</li>
+                <li>Damaged items policy</li>
+            </ul>
+
+            <h3>Order Tracking <span class="tag">order-tracking.html</span></h3>
+            <ul>
+                <li>Tracking form (order number + email)</li>
+                <li>How tracking works explainer</li>
+                <li>Support contact card</li>
+            </ul>
+
+            <h3>Care Guide <span class="tag">care-guide.html</span></h3>
+            <ul>
+                <li>Material‑specific care cards (Wood, Linen, Ceramics, Brass, Stone)</li>
+                <li>Do / Don't lists with check and X icons</li>
+                <li>General tips (sunlight, humidity, rotation)</li>
+                <li>Contact card for additional questions</li>
+            </ul>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="section">
+            <h2>✨ Key Features</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🎨 Quiet Luxury Design</h4>
+                    <p>Warm neutrals, serif display type, card‑based layouts, and soft shadows create an elevated “sanctuary” brand feel.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎛️ Customizable Color System</h4>
+                    <p>All colors controlled via CSS custom properties in <code>styles.css</code> — change a few values to own the palette.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🧩 Reusable UI Components</h4>
+                    <p><code>card-luxury</code>, <code>btn-primary</code>, <code>btn-outline</code>, <code>eyebrow</code>, <code>font-display</code>, and more — consistently used across all pages.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🖼️ Masonry Gallery + Lightbox</h4>
+                    <p>Responsive image grid with click‑to‑expand lightbox. Swipe, keyboard arrows, and a counter for effortless browsing.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🛍️ Shop with Filters & Quick Add</h4>
+                    <p>Category pills, product badges, hover zoom, and add‑to‑cart micro‑interactions. Best Sellers row with ranking numbers.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Animation & Scroll Reveals</h4>
+                    <p>AOS (Animate on Scroll) fades, zooms, and slides elements as they enter the viewport, creating an editorial rhythm.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📱 Fully Responsive</h4>
+                    <p>Meticulously adapted for mobile, tablet, and desktop. Navigation collapses into a glass‑effect drawer.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>✍️ Blog & Journal</h4>
+                    <p>Complete article listing and detail templates with featured posts, read times, and related articles.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎵 FAQ Accordion</h4>
+                    <p>Smooth open/close with rotating plus/minus icons. Built with vanilla JavaScript — no heavy dependencies.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📬 Working Forms</h4>
+                    <p>Contact and tracking forms include validation and success alerts. Ready to connect to Formspree, Netlify, or your backend.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📸 Lightweight Icons</h4>
+                    <p>Lucide for UI, Font Awesome for social. Both load from CDN with zero configuration.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🧾 Complete Legal Suite</h4>
+                    <p>Privacy Policy, Terms, Shipping & Returns, and Care Guide pages with professional, card‑based layouts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customization -->
+        <section id="customize" class="section">
+            <h2>🎨 Customization</h2>
+
+            <h3>Change Brand Colors</h3>
+            <p>
+                Open <code>css/styles.css</code> and edit the <code>:root</code> block. Every component references these variables:
+            </p>
+            <div class="code">:root {
+  --primary: #B4835B;        /* main brand color */
+  --primary-dark: #8B5A3C;
+  --secondary: #C9A27C;      /* warm gold */
+  --accent-c: #F2EAE0;       /* light neutral bg */
+  --muted-c: #6B5E53;        /* text muted */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+  --gradient-hero: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+  --shadow-luxe: 0 25px 50px -12px rgba(0,0,0,0.08);
+  /* ... and more */
+}</div>
+            <p>Change any value and the entire site updates instantly.</p>
+
+            <h3>Typography</h3>
+            <p>
+                LuxeNest uses a serif <strong>display font</strong> (loaded as <code>font-display</code> in Tailwind config) and a clean sans‑serif body. You can replace them by editing the Google Fonts link in each HTML file and updating the <code>fontFamily</code> in the Tailwind config block.
+            </p>
+
+            <h3>Tailwind Configuration</h3>
+            <p>
+                Each HTML file contains a small <code>tailwind.config</code> script that extends the default theme with custom colors, fonts, and spacing. You can add or modify values there — no need to touch the CDN.
+            </p>
+            <div class="code">tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: 'var(--primary)',
+        'primary-c': 'var(--primary)',
+        'primary-dark': 'var(--primary-dark)',
+        secondary: 'var(--secondary)',
+        'accent-c': 'var(--accent-c)',
+        'muted-c': 'var(--muted-c)',
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'serif'],
+      },
+    }
+  }
+}</div>
+        </section>
+
+        <!-- Images -->
+        <section id="images" class="section">
+            <h2>🖼️ Images & Assets</h2>
+            <p>
+                Template images are stored in the <code>assets/</code> folder. Replace them with your own product and lifestyle photography.
+            </p>
+            <pre class="code">assets/
+├── hero-living-room.jpg      (recommended 1600×900px)
+├── product-sofa.jpg          (1:1 or 4:5 ratio)
+├── product-lamp.jpg
+├── product-vase.jpg
+├── product-art.jpg
+├── about-designer.jpg
+├── collection-living.jpg
+├── collection-bedroom.jpg
+├── collection-lighting.jpg
+└── collection-wallart.jpg</pre>
+            <div class="note">
+                <strong>Image recommendations:</strong>
+                <br>• Hero images: 1600×900px (landscape, warm & airy)
+                <br>• Product cards: 4:5 aspect ratio, 800×1000px
+                <br>• Gallery: 4:3 or 1:1, at least 1200px wide for crisp zoom
+            </div>
+        </section>
+
+        <!-- Forms -->
+        <section id="forms" class="section">
+            <h2>📬 Forms & Interactions</h2>
+            <p>
+                The contact form (<code>contact.html</code>) and tracking form (<code>order-tracking.html</code>) use simple JavaScript to prevent default submission and display a success message. You can connect them to any backend:
+            </p>
+            <ul>
+                <li><strong>Formspree</strong> – add your endpoint to the <code>action</code> attribute</li>
+                <li><strong>Netlify Forms</strong> – add <code>netlify</code> attribute to the form</li>
+                <li><strong>PHP Mail</strong> – point to your <code>mailer.php</code></li>
+                <li><strong>Zapier / Make</strong> – webhook integration</li>
+            </ul>
+            <div class="code">// Example: contact form success handler
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  // your submission logic here
+  alert('Thank you — we will be in touch.');
+  this.reset();
+});</div>
+            <p>
+                Other interactions — accordion, lightbox, navbar glass effect, scroll‑to‑top — are fully functional out of the box and do not require any API keys.
+            </p>
+        </section>
+
+        <!-- FAQ & Legal -->
+        <section id="faq" class="section">
+            <h2>❓ FAQ & Legal Pages</h2>
+            <p>
+                The FAQ page uses click‑based accordion panels with smooth height transitions. Each question toggles independently, and the icon rotates using CSS transforms.
+            </p>
+            <p>
+                <strong>Privacy Policy</strong>, <strong>Terms & Conditions</strong>, <strong>Shipping & Returns</strong>, and <strong>Care Guide</strong> are fully styled, content‑ready pages. Just replace the placeholder text with your own policies.
+            </p>
+            <div class="note">
+                <strong>Important:</strong> The legal templates are provided as a starting point. You must review and adapt them to your specific business, location, and legal requirements before publishing.
+            </div>
+        </section>
+
+        <!-- Credits -->
+        <section id="credits" class="section">
+            <h2>🙏 Credits</h2>
+            <ul>
+                <li><strong>Tailwind CSS</strong> – Utility‑first CSS framework</li>
+                <li><strong>Lucide</strong> – Beautifully simple SVG icons</li>
+                <li><strong>Font Awesome 6</strong> – Social & brand icons</li>
+                <li><strong>AOS</strong> – Animate on Scroll library</li>
+                <li><strong>Google Fonts</strong> – Cormorant Garamond & Inter</li>
+                <li><strong>Unsplash</strong> – Placeholder photography (replace with your own)</li>
+                <li><strong>OpenStreetMap</strong> – Embedded map on contact page</li>
+            </ul>
+        </section>
+
+        <hr>
+        <p style="text-align:center; color:var(--text-muted); font-size:14px; margin-top:40px;">
+            🛋️ LuxeNest — Decor that turns a house into a sanctuary.
+        </p>
+    </div>
+</div>
+</body>
+</html>
